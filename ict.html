@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="iic.css">
+    <title>Porsche</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="page.html" class="menu">Menu</a>
+            <ul class="hr">
+                <li><a href="models.html">Models</a></li>
+                <li><a href="news&amp;events.html">News & Events</a></li>
+                <li><a href="aboutus.html">About Porsche</a></li>
+            </ul>
+        </header>
+
+        <main>
+        <section class="banner">
+            <img src="https://wallpapers.com/images/hd/4k-ultra-hd-porsche-86xozzednxv2xhdu.jpg" alt="Banner Image">
+        </section>
+        </main>
+    </div>
+
+    <div class="image-container">
+        <div class="image-card">
+            <img src="https://shop.porsche.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F1oyzmkwpf3d5%2F6sOKmgdqbjgeCJ1XVjcIk8%2F916ed604ffdcc6168df7d6d20933bab9%2FTeaser_Tile_LP_16-9_Stage-Banner_Cyberweek-2023_2560x1440_v2.jpg&w=1920&q=75" alt="Additional Image 1">
+            <h3>It's Christmas time – also at Porsche.</h3>
+        </div>
+        <div class="image-card">
+            <a href="news&events.html"><img src="https://files.porsche.com/filestore/galleryimagerwd/multimedia/none/e3-2nd-cayenne-suv-gallery-03/zoom2/186b0320-55ee-11ee-8107-005056bbdc38;sP;twebp/porsche-zoom2.webp" alt="Additional Image 2"></a>
+            <h3>The new Cayenne S E-Hybrid.</h3>
+        </div>
+        <div class="image-card">
+            <img src="https://images-porsche.imgix.net/-/media/768413AC21084123993681F21360C0DC__01---Taycan-CT?w=1800&q=85&crop=faces%2Centropy%2Cedges&auto=format" alt="Additional Image 3">
+            <h3>Experience the Taycan.</h3>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <form id="loginForm" onsubmit="validateLogin(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Phone number:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label for="region">Region:</label>
+            <input type="text" id="region" required>
+
+            <label for="country">What country are you from?</label>
+            <select name="country">
+                <option value="USA">U.S.A.</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">UK</option>
+            </select>
+
+            <button type="submit">Submit</button>
+            <button onclick="logout()">Выйти из системы</button>
+        </form>
+        
+    </div>
+
+
+
+    <button id="ShowModal_1">1 module</button>
+    <br>
+    <button id="ShowModal_2">2 module</button>
+    <br>
+    <button id="ShowModal_3">3 module</button>
+
+    <dialog class="modal" id="modal">
+        <h2>Porsche website</h2>
+        <p>Evaluate</p>
+        <button id="CloseModal_1">Close the module</button>
+    </dialog>
+
+    <dialog class="modal" id="modal2">
+        <h2>Porsche website</h2>
+        <p>Evaluate</p>
+        <button id="CloseModal_2">Close the module</button>
+    </dialog>
+
+    <dialog class="modal" id="modal3">
+        <h2>Porsche website</h2>
+        <p>Evaluate</p>
+        <button id="CloseModal_3">Close the module</button>
+    </dialog>
+
+    
+
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        })
+
+        function validateLogin(event) {
+            document.getElementById("loginContainer").style.display = "none";
+            document.getElementById("logoutContainer").style.display = "block";
+
+            event.preventDefault();
+        }
+
+        function logout() {
+            alert('Вы успешно вышли из системы.');
+
+            document.getElementById("loginContainer").style.display = "block";
+            document.getElementById("logoutContainer").style.display = "none";
+        }
+    </script>
+    <script src="iic.js"></script>
+</body>
+</html>
